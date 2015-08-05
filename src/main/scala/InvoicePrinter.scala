@@ -4,5 +4,6 @@
 object InvoicePrinter {
   def PrintInvoice(invoice: Invoice) = {
 
+
   }
 }

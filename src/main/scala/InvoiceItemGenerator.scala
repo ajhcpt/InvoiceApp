@@ -1,8 +1,8 @@
 import scala.math.BigDecimal.RoundingMode
 
-object InvoiceGenerator {
-  def GenerateInvoice(items: Seq[Item]): Invoice = {
-    val invoiceItems = items.groupBy(item => item.productId).map(x => {
+object InvoiceItemGenerator {
+  def GenerateInvoiceItems(items: Seq[Product]): Seq[InvoiceItem] = {
+    items.groupBy(item => item.productId).map(x => {
       val productId = x._2.head.productId
       val description = x._2.head.description
       val count = x._2.size
@@ -12,7 +12,5 @@ object InvoiceGenerator {
       val lineTotal = (count * unitPrice) + vat
       new InvoiceItem(productId, description, count, unitPrice, vat, lineTotal)
     }).toSeq
-
-    new Invoice(invoiceItems)
   }
 }

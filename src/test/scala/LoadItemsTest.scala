@@ -3,15 +3,15 @@ import org.scalatest._
 class LoadItemsTest extends FeatureSpec with GivenWhenThen {
   val titleString = "productId, unitprice, description"
   val itemString1 = "1, 10, item one"
-  val item1 = new Item(1, "item one", 10)
+  val item1 = new Product(1, "item one", 10)
   val itemString2 = "2, 10, item two"
-  val item2 = new Item(2, "item two", 10)
+  val item2 = new Product(2, "item two", 10)
   val itemString3 = "3, 10, item three"
-  val item3 = new Item(3, "item three", 10)
+  val item3 = new Product(3, "item three", 10)
   val itemString4 = "12, 10, item twelve"
-  val item4 = new Item(12, "item twelve", 10)
+  val item4 = new Product(12, "item twelve", 10)
   val itemString5 = "7, 10, item seven"
-  val item5 = new Item(7, "item seven", 10)
+  val item5 = new Product(7, "item seven", 10)
 
   feature("File Load") {
     scenario("Title line should be removed") {
